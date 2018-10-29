@@ -29,4 +29,58 @@ class BowlingTest extends FunSuite {
     assert(frame1.status === 2)
   }
 
+  test("extreme case of all strikes"){
+    var score1 = new Score()
+    var points = 10
+    var stPrevFrame1 = "normal"
+    var stPrevFrame2 = "normal"
+    for (x <- 1 to 10) {
+
+      var frame1 = new Frame(stPrevFrame1, stPrevFrame2)
+      while (frame1.status < 2) {
+
+        //println(stPrevFrame1 + "  " + stPrevFrame2)
+        frame1.getPoints(points)
+
+        frame1.getScoreType(points)
+        stPrevFrame2 = stPrevFrame1
+
+        stPrevFrame1 = frame1.scoreType
+
+
+      }
+      score1.updateTotal(frame1.pointsTotal)
+    }
+
+    assert(score1.scoreTotal===270)
+
+  }
+
+  test("extreme case of all 3s"){
+    var score1 = new Score()
+    var points = 3
+    var stPrevFrame1 = "normal"
+    var stPrevFrame2 = "normal"
+    for (x <- 1 to 10) {
+
+      var frame1 = new Frame(stPrevFrame1, stPrevFrame2)
+      while (frame1.status < 2) {
+
+        println(stPrevFrame1 + "  " + stPrevFrame2)
+        frame1.getPoints(points)
+
+        frame1.getScoreType(points)
+        stPrevFrame2 = stPrevFrame1
+
+        stPrevFrame1 = frame1.scoreType
+
+
+      }
+      score1.updateTotal(frame1.pointsTotal)
+    }
+
+    assert(score1.scoreTotal===60)
+
+  }
+
 }

@@ -11,17 +11,14 @@ object Bowling {
       var frame1 = new Frame(stPrevFrame1, stPrevFrame2)
       while (frame1.status < 2) {
 
-        //println(stPrevFrame1 + "  " + stPrevFrame2)
         frame1.getPoints(points)
 
         frame1.getScoreType(points)
         stPrevFrame2 = stPrevFrame1
 
         stPrevFrame1 = frame1.scoreType
-
-        score1.updateTotal(frame1.pointsTotal)
-
       }
+      score1.updateTotal(frame1.pointsTotal)
     }
 
     println(score1.scoreTotal)
@@ -49,6 +46,7 @@ class Frame(statusPrevFrame1: String, statusPrevFrame2: String) {
   var status: Int = 0
 
   def getPoints(point: Int): Unit = {
+
     if (statusPF1 =="strike" && statusPF2=="strike") {
       pointsFrame = point * 3
     } else if (statusPF1 =="strike" ){
@@ -57,6 +55,7 @@ class Frame(statusPrevFrame1: String, statusPrevFrame2: String) {
       pointsFrame = point
     }
     status = status + 1
+
     pointsTotal = pointsTotal + pointsFrame
 
   }
