@@ -3,13 +3,15 @@ object Bowling {
   def main(args: Array[String]): Unit = {
     //points = scala.io.StdIn.readInt()
     var score1 = new Score()
-    var points = 10
+
     var stPrevFrame1 = "normal"
     var stPrevFrame2 = "normal"
-    for (x <- 1 to 10) {
+    for (x <- 1 to 3) {
 
       var frame1 = new Frame(stPrevFrame1, stPrevFrame2)
       while (frame1.status < 2) {
+        println("Enter a number")
+        var points = scala.io.StdIn.readInt()
 
         frame1.getPoints(points)
 
@@ -17,8 +19,10 @@ object Bowling {
         stPrevFrame2 = stPrevFrame1
 
         stPrevFrame1 = frame1.scoreType
+        println(frame1.pointsTotal)
       }
       score1.updateTotal(frame1.pointsTotal)
+      println(score1.scoreTotal)
     }
 
     println(score1.scoreTotal)
@@ -49,7 +53,9 @@ class Frame(statusPrevFrame1: String, statusPrevFrame2: String) {
 
     if (statusPF1 =="strike" && statusPF2=="strike") {
       pointsFrame = point * 3
-    } else if (statusPF1 =="strike" ){
+    } else if (statusPF1 =="strike" ) {
+      pointsFrame = point * 2
+    }else if (statusPF1 == "spare" & status == 0){
       pointsFrame = point * 2
     }else{
       pointsFrame = point
@@ -68,7 +74,7 @@ class Frame(statusPrevFrame1: String, statusPrevFrame2: String) {
       //println("first")
     } else if (pointsTotal == 10 && status == 2) {
       scoreType = "spare"
-      //println("second")
+      println("second")
     } else {
       scoreType = "normal"
       //println("third")
