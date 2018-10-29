@@ -1,10 +1,10 @@
 # Bowling
 
-##Bowling Game
+## Bowling Game
 
 Count and sum the scores of a bowling game of one player.
 
-###Rules of play
+### Rules of play
 A game of bowling consists of ten frames. In each frame, the bowler will have two chances to knock down as many 
 pins as possible with their bowling ball. In games with more than one bowler, as is common, every bowler will 
 take their frame in a predetermined order before the next frame begins. If a bowler is able to knock down all 
