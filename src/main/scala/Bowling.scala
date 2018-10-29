@@ -26,15 +26,17 @@ class Frame() {
   var points = 0
   var status = 0
 
-  def getPoints(points: Int): Unit = {
+  def getPoints(point: Int): Unit = {
+    points = point
     status = status + 1
     pointsTotal = pointsTotal + points
+
   }
 
   def getScoreType(): Any = {
     if (points == 10) {
       scoreType = "strike"
-    } else if (pointsTotal == 10 & status == 2) {
+    } else if (pointsTotal == 10 && status == 2) {
       scoreType = "spare"
     } else {
       scoreType = "normal"
