@@ -32,8 +32,8 @@ class BowlingTest extends FunSuite {
   test("extreme case of all strikes"){
     var score1 = new Score()
     var points = 10
-    var stPrevFrame1 = "normal"
-    var stPrevFrame2 = "normal"
+    var stPrevFrame1 = "open"
+    var stPrevFrame2 = "open"
     for (x <- 1 to 10) {
 
       var frame1 = new Frame(stPrevFrame1, stPrevFrame2)
@@ -58,8 +58,8 @@ class BowlingTest extends FunSuite {
   test("extreme case of all 3s"){
     var score1 = new Score()
     var points = 3
-    var stPrevFrame1 = "normal"
-    var stPrevFrame2 = "normal"
+    var stPrevFrame1 = "open"
+    var stPrevFrame2 = "open"
     for (x <- 1 to 10) {
 
       var frame1 = new Frame(stPrevFrame1, stPrevFrame2)
@@ -84,8 +84,8 @@ class BowlingTest extends FunSuite {
     var score1 = new Score()
     var points = new Array[Int](6)
     points = Array(8,2,3,7,5,5)
-    var stPrevFrame1 = "normal"
-    var stPrevFrame2 = "normal"
+    var stPrevFrame1 = "open"
+    var stPrevFrame2 = "open"
     var i = 0
     for (x <- 1 to 3) {
 
