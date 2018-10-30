@@ -76,7 +76,7 @@ class Frame(statusPrevFrame1: String, statusPrevFrame2: String) {
       //println("first")
     } else if (pointsFrame == 10 && status == 2) {
       scoreType = "spare"
-      println("second")
+      //println("second")
     } else {
       scoreType = "normal"
       //println("third")
